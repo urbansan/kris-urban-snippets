@@ -1,0 +1,58 @@
+repos:
+  - repo: https://github.com/pycqa/isort
+    rev: 5.8.0
+    hooks:
+      - id: isort
+        language: system
+        language_version: default
+        args: [--sp, pyproject.toml]
+
+  - repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+      - id: black
+        language: system
+        language_version: default
+        args: [--config, pyproject.toml]
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: "3.9.0"
+    hooks:
+      - id: flake8
+        language: system
+        language_version: default
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.812
+    hooks:
+      - id: mypy
+        language: system
+        language_version: default
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: trailing-whitespace
+        language: system
+        language_version: default
+      - id: end-of-file-fixer
+        language: system
+        language_version: default
+      - id: check-merge-conflict
+        language: system
+        language_version: default
+
+  - repo: https://github.com/myint/docformatter
+    rev: v1.3.1
+    hooks:
+      - id: docformatter
+        language: system
+        language_version: default
+        args:
+          - --in-place
+          - --wrap-summaries=110
+          - --wrap-description=110
+          - --pre-summary-newline
+          - --exclude=migrations/versions
+          - --exclude=true_solar/database/migrations/versions
+          - --exclude=cars_gateway/database/migrations/versions

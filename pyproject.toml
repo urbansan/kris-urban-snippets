@@ -1,0 +1,16 @@
+[tool.black]
+line-length = 110
+include = '\.pyi?$'
+exclude = '''
+/(
+    .git
+  | .local
+  | .cache
+  | .stamps
+)/
+'''
+
+[tool.isort]
+line_length = 110
+multi_line_output = 3
+include_trailing_comma = "True"
